@@ -1,3 +1,187 @@
+// Fonts
+$primaryFont: "proxima-nova";
+
+// Colors
+$gray: #f9f9f9;
+$light_gray: #c4e4db;
+$dark_gray: #cccccc;
+$banner_bg_color_1: #0d8d99;
+$banner_bg_color_2: #0d7299;
+$banner_bg_color_3: #0d5b99;
+$super_light_blue: #2395a2;
+$light_blue: #82c4ca;
+$green: #2b647b;
+$black: #555;
+$white: #fff;
+$blue: #0576a0;
+$slight_gray: #888;
+
+// Reset
+* {
+  box-sizing: border-box;
+}
+
+// Helpers
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.wrapper {
+  width: 1040px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+// Main styles
+
 body {
-  font-family: "proxima-nova", Helvetica, sans-serif;
+  font-family: $primaryFont, Helvetica, Arial, "Lucia Grande", sans-serif;
+  background-color: $gray;
+}
+
+// Banner
+
+.banner {
+  background-color: $banner_bg_color_1;
+  background-image: linear-gradient(
+    $banner_bg_color_1,
+    $banner_bg_color_2 60%,
+    $banner_bg_color_3
+  );
+
+  #top_header {
+    padding: 0.7em 0;
+    border-bottom: 1px solid $super_light_blue;
+
+    a {
+      font-size: 1.1em;
+      color: $light_blue;
+      text-decoration: none;
+
+      &:hover {
+        transform: scale(1.1, 1.1);
+        color: $white;
+      }
+
+      &.brand {
+        float: left;
+        font-weight: 600;
+        transition: transform 0.5s ease-in-out;
+
+        span {
+          border: 2px solid $light_blue;
+          border-radius: 100%;
+          display: inline-block;
+          width: 46px;
+          height: 46px;
+          font-weight: 400;
+          line-height: 46px;
+          text-align: center;
+          margin-right: 0.3em;
+        }
+      }
+
+      &.back_button {
+        float: right;
+        margin-top: 1em;
+      }
+    }
+  }
+
+  .intro {
+    padding: 3.5em 0 0 0;
+    text-align: center;
+    color: $white;
+
+    .logo {
+      width: 70px;
+      height: 70px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin: 0.3em 0;
+    }
+
+    p {
+      width: 700px;
+      margin: 0 auto;
+      max-width: 70%;
+      line-height: 1.5;
+      font-size: 1.1em;
+      font-weight: 300;
+      color: $light_gray;
+      padding: 0.4em 0 2em 0;
+    }
+
+    .download_buttons {
+      .button {
+        background-color: $light_gray;
+        color: $blue;
+        text-decoration: none;
+        padding: 0.6em 1.7em;
+        display: inline-block;
+        min-width: 200px;
+        max-width: 100%;
+        font-size: 1.1em;
+        border-radius: 4px;
+        margin-right: 1.3em;
+
+        i {
+          color: $blue;
+          float: left;
+          margin-right: 0.3em;
+        }
+
+        span {
+          float: left;
+          margin-top: 0.5em;
+        }
+
+        &:hover {
+          background-color: $white;
+        }
+      }
+    }
+
+    .mobile_apps {
+      margin: 4em 0 0 0;
+
+      p {
+        font-size: 0.9em;
+        font-weight: 400;
+      }
+
+      .button {
+        background-color: $green;
+        display: inline-block;
+        width: 180px;
+        height: auto;
+        text-decoration: none;
+        border-radius: 8px;
+
+        &:hover {
+          background-color: darken($green, 4%);
+        }
+
+        img {
+          width: 100%;
+          max-width: 100%;
+        }
+      }
+
+      .apps_preview {
+        padding-top: 2em;
+        max-width: 90%;
+        margin-bottom: -15em;
+      }
+    }
+  }
 }
